@@ -38,13 +38,9 @@ def findAssets():
         "XEM",
         "DASH",
     ]
+    symbolIDPair_list = []
     for asset in assets_json:
         if asset["symbol"] in assetSymbol_list:
-            print(
-                "ID: {}; NAME: {}; SYMBOL: {}".format(
-                    asset["id"], asset["name"], asset["symbol"]
-                )
-            )
-
-
-findAssets()
+            symbolIDPair_list.append([asset["symbol"], asset["id"]])
+    print(symbolIDPair_list)
+    return symbolIDPair_list
